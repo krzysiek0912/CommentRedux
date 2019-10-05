@@ -1,4 +1,5 @@
 import React from 'react';
+import "./AddComment.css";
 
 class AddComment extends React.Component {
   state={
@@ -17,15 +18,19 @@ class AddComment extends React.Component {
   }
 
   render = () =>(
-    <div>
-      <form onSubmit={this.handleSubmit} action="">
-      <input 
-        value={this.state.value} 
-        onChange={this.handleChange} 
-        type="text" 
-        name="newComment"/>
+    <div className="addCommentWrapper">
+      <form onSubmit={this.handleSubmit}>          
+              <input 
+                value={this.state.value} 
+                onChange={this.handleChange} 
+                type="text" 
+                name="newComment"
+                className="form-control"/>
+              <button type="submit" 
+                onClick={this.handleSubmit} 
+                className="btn btn-primary btn-block"
+              >Dodaj komentarz</button>          
       </form>
-      <button onClick={this.handleSubmit}>Dodaj komentarz</button>
     </div>
   );
 }
